@@ -14,7 +14,7 @@ data class CompanyInvoice(
     val payerName: String,
     val payerRegisterNo: String,
     val payerAddress: String,
-    val payerTelPhone: String,
+    val payerTelephone: String,
     val payerBankName: String,
     val payerBankAccount: String,
     val userEmail: String,

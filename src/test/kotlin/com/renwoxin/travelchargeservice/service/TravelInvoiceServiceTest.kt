@@ -35,7 +35,7 @@ class TravelInvoiceServiceTest {
             payerName = "思特沃克软件技术（武汉）有限公司",
             payerRegisterNo = "111222220MA4K2A3C8N",
             payerAddress = "武汉市东湖新技术开发区关山大道332号保利时代A栋保利国际中心20层",
-            payerTelPhone = "027-87050527",
+            payerTelephone = "027-87050527",
             payerBankName = "招商银行股份有限公司武汉创业街支行",
             payerBankAccount = "1334312164512231",
             userEmail = "zhangsan@thoughtworks.com",
