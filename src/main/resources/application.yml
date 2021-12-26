@@ -4,3 +4,7 @@ gateway:
   invoice:
     host: http://localhost:9988
 
+---
+scheduler:
+  invoice:
+    corn: 0/5 * * * * ?
