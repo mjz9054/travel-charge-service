@@ -8,4 +8,7 @@ class AppProperties {
 
     @Value("\${gateway.unionpay.host}")
     var unionPayHost: String = ""
+
+    @Value("\${gateway.invoice.host}")
+    var invoiceHost: String = ""
 }
