@@ -1,3 +1,6 @@
-#gateway:
-#  unionpay:
-#    host: http://localhost:9988
+gateway:
+  unionpay:
+    host: http://localhost:9988
+  invoice:
+    host: http://localhost:9988
+
