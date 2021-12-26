@@ -1,5 +1,6 @@
 package com.renwoxin.travelchargeservice.service
 
+import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
@@ -59,6 +60,19 @@ class TravelInvoiceServiceTest {
         // then
         verify(invoiceClient, times(1)).createInvoice(invoiceDto)
         verify(companyInvoiceRepository, times(1)).save(invoice.copy(status = "COMPLETED"))
+    }
+
+    @Test
+    fun `should do nothing when create invoice given there is no invoice with status is PROCESSING `() {
+        // given
+        whenever(companyInvoiceRepository.findByStatus("PROCESSING")).thenReturn(emptyList())
+
+        // when
+        travelInvoiceService.scheduleCreateInvoice()
+
+        // then
+        verify(invoiceClient, times(0)).createInvoice(any())
+        verify(companyInvoiceRepository, times(0)).save(any())
     }
 }
 
