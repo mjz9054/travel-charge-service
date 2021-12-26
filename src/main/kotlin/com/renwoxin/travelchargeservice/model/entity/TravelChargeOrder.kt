@@ -11,6 +11,5 @@ data class TravelChargeOrder(
     val id: Long? = 0,
     val companyId: String,
     val amount: String,
-    val chargeStatus: String,
-    val invoiceStatus: String
+    val chargeStatus: String
 )

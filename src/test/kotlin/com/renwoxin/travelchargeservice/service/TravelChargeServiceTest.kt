@@ -40,8 +40,7 @@ class TravelChargeServiceTest {
             id = 55L,
             companyId = "1001",
             amount = "1000.0",
-            chargeStatus = "UNPAID",
-            invoiceStatus = "PROCESSING"
+            chargeStatus = "UNPAID"
         )
         whenever(travelChargeOrderRepository.findById(orderId)).thenReturn(
             Optional.of(
@@ -85,8 +84,7 @@ class TravelChargeServiceTest {
             id = 55L,
             companyId = "1001",
             amount = "1000.0",
-            chargeStatus = "COMPLETED",
-            invoiceStatus = "PROCESSING"
+            chargeStatus = "COMPLETED"
         )
         whenever(travelChargeOrderRepository.findById(orderId)).thenReturn(Optional.of(travelChargeOrder))
 

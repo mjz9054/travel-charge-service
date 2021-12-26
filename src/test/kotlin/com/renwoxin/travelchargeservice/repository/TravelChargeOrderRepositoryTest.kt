@@ -23,15 +23,13 @@ class TravelChargeOrderRepositoryTest {
         id = 55L,
         companyId = "1001",
         amount = "236.5",
-        chargeStatus = "UNPAID",
-        invoiceStatus = "PROCESSING"
+        chargeStatus = "UNPAID"
     )
     private val travelChargeOrder2 = TravelChargeOrder(
         id = 66L,
         companyId = "1001",
         amount = "366.5",
-        chargeStatus = "UNPAID",
-        invoiceStatus = "PROCESSING"
+        chargeStatus = "UNPAID"
     )
 
     @BeforeEach
