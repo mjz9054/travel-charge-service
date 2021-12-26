@@ -1,9 +1,6 @@
 package com.renwoxin.travelchargeservice.dto
 
 import com.renwoxin.travelchargeservice.model.entity.CompanyInvoice
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
 
 data class CompanyInvoiceDto(
     val id: Long?,
@@ -18,7 +15,7 @@ data class CompanyInvoiceDto(
     val userEmail: String,
     val userMobileNo: String,
     val amount: String,
-    val mShortName: String,
+    val merchantName: String,
     val status: String
 ) {
     constructor(invoice: CompanyInvoice) : this(
@@ -34,7 +31,7 @@ data class CompanyInvoiceDto(
         userEmail = invoice.userEmail,
         userMobileNo = invoice.userMobileNo,
         amount = invoice.amount,
-        mShortName = invoice.mShortName,
+        merchantName = invoice.merchantName,
         status = invoice.status
     )
 }

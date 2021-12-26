@@ -20,6 +20,6 @@ data class CompanyInvoice(
     val userEmail: String,
     val userMobileNo: String,
     val amount: String,
-    val mShortName: String,
+    val merchantName: String,
     val status: String
 )

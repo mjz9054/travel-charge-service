@@ -11,10 +11,7 @@ import com.nhaarman.mockitokotlin2.eq
 import com.nhaarman.mockitokotlin2.whenever
 import com.renwoxin.travelchargeservice.config.AppProperties
 import com.renwoxin.travelchargeservice.dto.CompanyInvoiceDto
-import com.renwoxin.travelchargeservice.dto.UnionPayPaymentDto
-import com.renwoxin.travelchargeservice.model.entity.CompanyInvoice
 import com.renwoxin.travelchargeservice.model.response.InvoiceCreateResponse
-import com.renwoxin.travelchargeservice.model.response.UnionPayPaymentResponse
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.BeforeAll
@@ -84,7 +81,7 @@ class InvoiceClientTest {
             userEmail = "zhangsan@thoughtworks.com",
             userMobileNo = "12346677890",
             amount = "5221.8",
-            mShortName = "任我行差旅服务有限公司",
+            merchantName = "任我行差旅服务有限公司",
             status = "PROCESSING"
         )
         whenever(appProperties.invoiceHost).thenReturn("http://localhost:5566")

@@ -41,7 +41,7 @@ class TravelInvoiceServiceTest {
             userEmail = "zhangsan@thoughtworks.com",
             userMobileNo = "12346677890",
             amount = "5221.8",
-            mShortName = "任我行差旅服务有限公司",
+            merchantName = "任我行差旅服务有限公司",
             status = "PROCESSING"
         )
         val invoiceDto = CompanyInvoiceDto(invoice)
