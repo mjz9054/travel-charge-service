@@ -46,7 +46,12 @@ class TravelInvoiceServiceTest {
         )
         val invoiceDto = CompanyInvoiceDto(invoice)
         whenever(companyInvoiceRepository.findByStatus("PROCESSING")).thenReturn(listOf(invoice))
-        whenever(invoiceClient.createInvoice(invoiceDto)).thenReturn(InvoiceCreateResponse(status = "ACCEPT"))
+        whenever(invoiceClient.createInvoice(invoiceDto)).thenReturn(
+            InvoiceCreateResponse(
+                status = "ACCEPT",
+                referenceId = "24762644145713432"
+            )
+        )
 
         // when
         travelInvoiceService.scheduleCreateInvoice()

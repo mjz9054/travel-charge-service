@@ -71,7 +71,7 @@ class InvoiceClientTest {
     @Test
     fun `should return payment status when create union payment given payment request`() {
         // given
-        val invoiceDto = CompanyInvoiceDto(
+       val invoiceDto = CompanyInvoiceDto(
             id = 23L,
             orderId = 55L,
             companyId = "1001",
@@ -101,7 +101,7 @@ class InvoiceClientTest {
         val actual = invoiceClient.createInvoice(invoiceDto)
 
         // then
-        val expected = InvoiceCreateResponse(status = "ACCEPT")
+        val expected = InvoiceCreateResponse(referenceId = "24762644145713432", status = "ACCEPT")
         assertThat(actual).isEqualTo(expected)
     }
 }
