@@ -11,7 +11,7 @@ class ScheduleService {
     @Autowired
     private lateinit var travelInvoiceService: TravelInvoiceService
 
-    @Scheduled(cron = "\${invoice.cron}")
+    @Scheduled(cron = "\${scheduler.invoice.cron}")
     fun scheduleCreateInvoice() {
         travelInvoiceService.scheduleCreateInvoice()
     }

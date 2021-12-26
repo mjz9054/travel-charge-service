@@ -7,4 +7,4 @@ gateway:
 ---
 scheduler:
   invoice:
-    corn: 0/5 * * * * ?
+    cron: 0/5 * * * * ?
