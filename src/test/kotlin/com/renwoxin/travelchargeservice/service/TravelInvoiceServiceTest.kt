@@ -26,7 +26,7 @@ class TravelInvoiceServiceTest {
     private lateinit var travelInvoiceService: TravelInvoiceService
 
     @Test
-    fun `should return invoice status is PROCESSING when create invoice request given order id and order is paid`() {
+    fun `should create invoice through invoice client when create invoice given invoice status is PROCESSING `() {
         // given
         val invoice = CompanyInvoice(
             id = 23L,
