@@ -1,8 +1,10 @@
 package com.renwoxin.travelchargeservice.service
 
 import com.renwoxin.travelchargeservice.common.TravelOrderChargeStatus
-import com.renwoxin.travelchargeservice.dto.UnionPayPaymentDto
 import com.renwoxin.travelchargeservice.dto.TravelChargePaymentDto
+import com.renwoxin.travelchargeservice.dto.UnionPayPaymentDto
+import com.renwoxin.travelchargeservice.exception.BusinessException
+import com.renwoxin.travelchargeservice.exception.ErrorCode.TRAVEL_ORDER_ALREADY_PAID
 import com.renwoxin.travelchargeservice.gateway.UnionPayClient
 import com.renwoxin.travelchargeservice.repository.TravelChargeOrderRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,7 +21,7 @@ class TravelChargeService {
     fun createPayment(orderId: Long): TravelChargePaymentDto {
         val order = travelChargeOrderRepository.findById(orderId).get()
         if (order.chargeStatus != TravelOrderChargeStatus.UNPAID.name) {
-            TODO()
+            throw BusinessException(TRAVEL_ORDER_ALREADY_PAID)
         }
         val payPaymentResponse = unionPayClient.createPayment(
             UnionPayPaymentDto(
